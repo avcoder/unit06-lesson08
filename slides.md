@@ -118,6 +118,8 @@ class: text-left
 
 - ☑️ [CircuitStream needs your feedback](https://forms.gle/SpjofQ82w1boWcqS9)
 - 🦆 [Duck AI](https://duck.ai/)
+- ⚛️ [React v19 (RSC) Cheat Sheet](https://www.epicreact.dev/react-19-cheatsheet)
+- 🛖 [Architectures of modern Front-end Apps](https://blog.meetbrackets.com/architectures-of-modern-front-end-applications-8859dfe6c12e)
 
 <br>
 <hr>
