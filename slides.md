@@ -35,10 +35,74 @@ Frontend Development: Unit 06 - Lesson 08
 
 ---
 transition: slide-left
+layout: two-cols
 ---
 
 # Recap
-- Q: 
+Q: When count changes, what gets re-rendered?
+
+```jsx
+function App() {
+  return (
+    <>
+      <Counter />
+      <footer>&copy; 2025</footer>
+    </>
+  );
+}
+
+const H1: React.FC<H1Props> = ({ count }) => {
+  return <h1>{count}</h1>;
+};
+
+const H2 = () => {
+  return <h2>👋</h2>;
+};
+```
+
+::right::
+
+```jsx
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div className="card">
+        <H1 count={count} />
+        <H2 />
+        <Button
+          label="count is"
+          badge={count}
+          clickHandler={() => setCount(count + 1)}
+          severity="secondary"
+        />
+      </div>
+    </>
+  );
+};
+```
+
+---
+transition: slide-left
+---
+
+# React.memo
+
+- Q: Why did H2 re-render if it didn't depend on `count`?
+  - A: because React tries to re-render all descendants, regardless.  This is because it's hard to know with 100% certainty, whether H2 depends indirectly on `count`.  
+  - React would rather err on the side of caution and re-render all descendants to match UI with state.
+- Q: In larger apps, is it possible for one stage change to degrade performance while re-rendering all its children components?
+- `React.memo()` is a utility that memoizes a component and prevents it from re-rendering if its props/state haven't changed
+- Replace our `<H2 />` component with our memoized `<H2_v2 />`
+   - Does emoji still re-render?
+```jsx
+import { memo } from "react";
+   ...
+const H2_v2 = memo(H2);
+   ...
+<H2_v2 />
+```
 
 ---
 layout: image-right
@@ -53,6 +117,7 @@ class: text-left
 🍦 Cool Tips, Trends and Resources:
 
 - ☑️ [CircuitStream needs your feedback](https://forms.gle/SpjofQ82w1boWcqS9)
+- 🦆 [Duck AI](https://duck.ai/)
 
 <br>
 <hr>
