@@ -17,10 +17,10 @@ mdc: true
 ---
 
 # React: useMemo, UseCallback
-Frontend Development: Unit 06 - Lesson 07
+Frontend Development: Unit 06 - Lesson 08
 
-- [ ] Good Practices
 - [ ] useMemo, useCallback, useRef
+- [ ] Good Practices
 - [ ] Optimization and Profiler
 
 <div class="abs-br m-6 text-xl">
@@ -52,7 +52,7 @@ class: text-left
 
 🍦 Cool Tips, Trends and Resources:
 
-- 🪝 [usehooks.com](https://usehooks.com/)
+- ☑️ [CircuitStream needs your feedback](https://forms.gle/SpjofQ82w1boWcqS9)
 
 <br>
 <hr>
