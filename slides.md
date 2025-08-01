@@ -19,9 +19,9 @@ mdc: true
 # React: useMemo, UseCallback
 Frontend Development: Unit 06 - Lesson 08
 
-- [ ] useMemo, useCallback, useRef
-- [ ] Good Practices
-- [ ] Optimization and Profiler
+- [ ] Optimizations via memo, useMemo, useCallback
+- [ ] useId, useRef
+- [ ] Good Practices + Profiler
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
