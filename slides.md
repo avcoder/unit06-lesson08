@@ -20,8 +20,8 @@ mdc: true
 Frontend Development: Unit 06 - Lesson 08
 
 - [ ] Optimizations via memo, useMemo, useCallback
-- [ ] useId, useRef
 - [ ] Good Practices + Profiler
+- [ ] useId, useRef
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
