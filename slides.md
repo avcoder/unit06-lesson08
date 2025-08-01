@@ -107,8 +107,8 @@ const H2_v2 = memo(H2);
 ---
 layout: image-right
 transition: slide-left
-image: /assets/holmes.png
-backgroundSize: 420px 500px
+image: /assets/pubsub.png
+backgroundSize: 420px 380px
 class: text-left
 ---
 
