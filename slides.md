@@ -93,9 +93,9 @@ transition: slide-left
   - A: because React tries to re-render all descendants, regardless.  This is because it's hard to know with 100% certainty, whether H2 depends indirectly on `count`.  
   - React would rather err on the side of caution and re-render all descendants to match UI with state.
 - Q: In larger apps, is it possible for one stage change to degrade performance while re-rendering all its children components?
-- `React.memo()` is a utility that memoizes a component and prevents it from re-rendering if its props/state haven't changed
-- Replace our `<H2 />` component with our memoized `<H2_v2 />`
-   - Does emoji still re-render?
+- IF you do notice performance issues, then perhaps using `React.memo()` will help
+   - it's a utility that memoizes a component and prevents it from re-rendering if its props/state haven't changed
+- Replace our `<H2 />` component with our memoized `<H2_v2 />` Does emoji still re-render?
 ```jsx
 import { memo } from "react";
    ...
