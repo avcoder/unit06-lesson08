@@ -87,7 +87,7 @@ const Counter = () => {
 transition: slide-left
 ---
 
-# React.memo
+# Optimization: React.memo
 
 - Q: Why did H2 re-render if it didn't depend on `count`?
   - A: because React tries to re-render all descendants, regardless.  This is because it's hard to know with 100% certainty, whether H2 depends indirectly on `count`.  
