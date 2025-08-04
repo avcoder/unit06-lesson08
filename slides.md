@@ -107,6 +107,19 @@ transition: slide-left
 transition: slide-left
 ---
 
+# React useId
+
+
+---
+transition: slide-left
+---
+
+# React useRef
+
+---
+transition: slide-left
+---
+
 # Optimization: React.memo
 
 - Q: Why did H2 re-render if it didn't depend on `count`?
