@@ -16,11 +16,11 @@ transition: slide-left
 mdc: true
 ---
 
-# React: useMemo, UseCallback
+# React: Optimizations
 Frontend Development: Unit 06 - Lesson 08
 
 - [ ] useRef, Good Practices
-- [ ] Optimizations via memo, useMemo, useCallback
+- [ ] memo, useMemo, useCallback
 - [ ] React Dev Tools > Profiler
 
 <div class="abs-br m-6 text-xl">
