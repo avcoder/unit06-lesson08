@@ -464,7 +464,12 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise:
+# Exercise: putting it all together
+
+- Use https://fakestoreapi.com/ or your Node/Express app but refactored to only output JSON
+- Create a store page that lists all products
+- Create CRUD functionality for shopping cart
+- Create a login screen
 
 ---
 transition: slide-left
