@@ -252,7 +252,20 @@ transition: slide-left
 # Exercise: useCallback on a filtered list
 
 - see app.agencyanalytics.com > dev tools Source tab > Ctrl + P to find TaskModal.tsx
-- Refactor Recipe app (Lesson15 that we just did) to useCallback for selecting category, and filtering search change
+1. Refactor Recipe app that we just did to useCallback for selecting category
+  ```jsx
+  // to remove all this later: test if useCallback is working via useEffect and useRef
+  const prevSelectCategoryFn = useRef(handleSelectCategory);
+
+  useEffect(() => {
+    console.log(
+      "Function changed: ",
+      prevSelectCategoryFn.current !== handleSelectCategory
+    );
+    prevSelectCategoryFn.current = handleSelectCategory;
+  }, [handleSelectCategory]);
+  ```
+2. Refactor Recipe app to useCallback for filtering search change
 ---
 layout: image-right
 transition: slide-left
