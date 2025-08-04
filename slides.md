@@ -321,7 +321,98 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise:
+# Exercise: Fill-in-the-blank (pg.1)
+
+```jsx
+  // 1. Declare state/setter for questions set to the default value of []
+  // 2. Declare state/setter for currentIndex set to the default value of 0
+  // 3. Declare state/setter for gameOver set to the default value of false
+  // 4. Declare const currentQuestion set to the value of the questions array at currentIndex 
+
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      const res = await fetch(
+        "https://opentdb.com/api.php?amount=15&category=18&type=multiple&encode=url3986"
+      );
+      const data = await res.json();
+      // 5. Call the setter function to set questions to be data.results 
+
+    };
+    fetchQuestions();
+  }, []);
+
+    // 6. Use the appropriate hook to memoize the following value 
+    const shuffledAnswers = ______(() => {
+    if (!currentQuestion) return [];
+    return [...currentQuestion.incorrect_answers, currentQuestion.correct_answer,
+    ].sort(() => Math.random() - 0.5);
+    // 7. What goes in the dependency array below?
+  }, [_______]);
+```
+
+---
+transition: slide-left
+---
+
+# Exercise: Fill-in-the-blank (pg.2)
+
+```jsx
+ // 8. Use the appriate hook to memoize the following function
+ const handleAnswer = ________(
+    (answer: string) => {
+      if (!currentQuestion) return;
+
+      if (answer === currentQuestion.correct_answer) {
+        setCurrentIndex((prev) => prev + 1);
+      } else {
+        setGameOver(true);
+      }
+    },
+    // 9. What goes in the dependency array?
+    [____________]
+  );
+
+  // 10. Use the appriate hook to memoize the following function
+  const restartGame = _________(() => {
+    setCurrentIndex(0);
+    setGameOver(false);
+    // 11. What goes in the dependency array?
+  }, [________]);
+
+  if (!currentQuestion) return <div>Loading questions...</div>;
+```
+
+---
+transition: slide-left
+---
+
+# Exercise: Fill-in-the-blank (pg.3)
+
+```jsx
+ if (gameOver) {
+    return (
+      <div>
+        <h2>Game Over!</h2>
+        <!-- 12. Which function reference should we put below to restart the game? -->
+        <button onClick={_______}>Play Again</button>
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <h2>{decodeURIComponent(currentQuestion.question)}</h2>
+      <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+        {shuffledAnswers.map((answer, index) => (
+          <button key={index} onClick={() => handleAnswer(answer)}>
+            {decodeURIComponent(answer)}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+```
 
 ---
 layout: image-right
