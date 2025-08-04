@@ -135,6 +135,41 @@ const FocusInput = () => {
 transition: slide-left
 ---
 
+# Performance Issues: Unnecessary Re-renders
+
+```jsx
+const H1: React.FC<H1Props> = ({ count }) => { return <h1>{count}</h1> };
+const H2 = () => { return <h2>👋</h2> };
+
+const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <div className="card">
+        <H1 count={count} />
+        <H2 /> {/*  SHOULD THIS RE-RENDER EVEN THOUGH NOTHING ABOUT THIS COMPONENT CHANGED? */}
+        <Button label="count is" badge={count} clickHandler={() => setCount((count) => count + 1)} 
+          severity="secondary" />
+      </div>
+    </>
+  );
+};
+
+function Lesson13() {
+  return (
+    <>
+      <Counter />
+      <footer>&copy; 2025</footer>
+    </>
+  );
+}
+```
+
+---
+transition: slide-left
+---
+
 # Optimization: React.memo
 
 - Q: Why did H2 re-render if it didn't depend on `count`?
