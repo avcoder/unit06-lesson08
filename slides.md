@@ -107,7 +107,29 @@ transition: slide-left
 transition: slide-left
 ---
 
-# React useRef
+# useRef
+
+- Recall that JSX is not HTML.  JSX produces JS which in turns manipulates the DOM
+- But sometimes we need access to the lower level DOM nodes
+- Instead of using `document.querySelector()` to grab DOM elements, we can use React's `useRef`
+- `useRef` are mostly used to hold DOM nodes although it can hold any kind of value
+- `useRef` can also be used to store a mutable value that persists across renders but doesn't trigger a re-render
+
+```jsx
+const FocusInput = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    inputRef.current?.focus(); // Auto-focus when component mounts
+  }, []); // Empty dependency array means this runs once on mount
+
+  return (
+    <div>
+      <input ref={inputRef} type="text" placeholder="I'm focused on load" />
+    </div>
+  );
+};
+```
 
 ---
 transition: slide-left
