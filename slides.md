@@ -459,6 +459,14 @@ transition: slide-left
 ---
 
 # React Dev Tools > Profiler
+Tool to visualize how long React app took to render various components
+
+- Dev Tools > Profiler > click "Reload and start profiling"
+- Refresh page, interact with app then click Stop
+- Fraction at top right indicates how many times app rendered
+- Flameograph shows overall hierarchy number of milliseconds each component took to render
+- Ranked tab shows longest component at top > can then search for name of component in VS Code to figure out why it may be slow
+
 
 ---
 transition: slide-left
@@ -467,8 +475,8 @@ transition: slide-left
 # Exercise: putting it all together
 
 - Use https://fakestoreapi.com/ or your Node/Express app but refactored to only output JSON
-- Create a store page that lists all products
-- Create CRUD functionality for shopping cart
+- Create a store page that lists all products on a table (can use Material UI or other UI framework)
+   - Extra: make it so that at least one of the columns is sortable (ex: by price)
 - Create a login screen
 
 ---
