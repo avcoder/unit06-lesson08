@@ -144,7 +144,7 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise: useCallback on a filtered list
+# Exercise: useMemo on a filtered list
 Refactor Lesson12 (fetching recipes) to include an input box from which to filter fetched recipes
 
 ```jsx
