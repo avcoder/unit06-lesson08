@@ -473,10 +473,12 @@ transition: slide-left
 ---
 
 # Exercise: putting it all together
+Emulate amazon.ca using fakestoreapi.com
 
 - Use https://fakestoreapi.com/ or your Node/Express app but refactored to only output JSON
-- Create a store page that lists all products on a table (can use Material UI or other UI framework)
-   - Extra: make it so that at least one of the columns is sortable (ex: by price)
+- Create a store page that lists all products on a table or list of cards
+- Optional: can use Material UI or other UI framework
+   - Extra: make it so that products may be sortable by price (similar to amazon.ca)
 - Create a login screen using the Fake Store's API for Login Token
 
 ---
