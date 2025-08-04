@@ -444,6 +444,16 @@ transition: slide-left
 
 # Good Practices
 
+1. Keep components small and focused: One component should do one thing well
+2. Lift state only when necessary: Keep state as close to where it's used as possible
+3. Avoid prop drilling: Use useContext for deeply nested props
+4. Use useReducer for complex state logic
+5. useMemo for expensive calculations
+6. useCallback for functions passed to children
+7. Write unit tests for components using libraries like React Testing Library, Jest and/or vitest
+8. As apps grow in size, consider grouping by features or domains
+
+
 ---
 transition: slide-left
 ---
