@@ -19,9 +19,9 @@ mdc: true
 # React: useMemo, UseCallback
 Frontend Development: Unit 06 - Lesson 08
 
-- [ ] useId, useRef
+- [ ] useRef, Good Practices
 - [ ] Optimizations via memo, useMemo, useCallback
-- [ ] Good Practices + Profiler
+- [ ] React Dev Tools > Profiler
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
@@ -102,13 +102,6 @@ transition: slide-left
     - Can come here if they are not memoized, or sometimes before memoized ones if simpler.
     - Often handlers are memoized with useCallback and placed earlier.
 6. Rendering Logic / JSX
-
----
-transition: slide-left
----
-
-# React useId
-
 
 ---
 transition: slide-left
