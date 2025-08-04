@@ -466,7 +466,11 @@ Tool to visualize how long React app took to render various components
 - Fraction at top right indicates how many times app rendered
 - Flameograph shows overall hierarchy number of milliseconds each component took to render
 - Ranked tab shows longest component at top > can then search for name of component in VS Code to figure out why it may be slow
-
+- ex: `1.9ms of 22.6ms`
+   - 1.8ms means Component (excluding its children) took 1.8ms
+   - 20.2ms means Component and all its children took 20.2ms to render
+   - Good to figure out if its the parent or the children that's slow
+- q
 
 ---
 transition: slide-left
