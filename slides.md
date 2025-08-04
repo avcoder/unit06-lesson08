@@ -110,6 +110,44 @@ transition: slide-left
 
 # Optimization: useMemo
 
+- Allows us to memoize/remember a computed value between renders which
+
+```jsx
+  const [number, setNumber] = useState(1);
+  const [renderCount, setRenderCount] = useState(0);
+
+  const factorial = useMemo(() => {
+    console.log('Calculating factorial')
+    const calculate = (n) => {
+      if (n <= 0) return 1;
+      return n * calculate(n - 1);
+    };
+    return calculate(number);
+  }, [number]);
+
+  return (
+    <div>
+      <input
+        type="number"
+        value={number}
+        onChange={(e) => setNumber(parseInt(e.target.value))}
+      />
+      <p>Factorial of {number} is {factorial}</p>
+      <button onClick={() => setCounter(counter + 1)}>Re-render</button>
+      <p>Render count: {renderCount}</p>
+    </div>
+  );
+}
+```
+
+---
+transition: slide-left
+---
+
+# Exercise: useCallback
+
+
+
 ---
 transition: slide-left
 ---
