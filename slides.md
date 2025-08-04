@@ -87,6 +87,26 @@ const Counter = () => {
 transition: slide-left
 ---
 
+# Best Practice: How to organize your code 
+
+1. Constants / Static Values / Default Props / Config
+    - Any plain constants, static data, or config variables used inside the component.
+    - These should be outside the component if they don’t depend on props/state.
+2. React State Hooks (useState)
+    - Declare all state variables near the top.
+3. Memoization Hooks (useMemo, useCallback)
+    - This ensures you use fresh state values as dependencies.
+4. Side Effects (useEffect, useLayoutEffect)
+    - This order makes it easier to see effects triggered by state changes.
+5. Event Handlers and other functions
+    - Can come here if they are not memoized, or sometimes before memoized ones if simpler.
+    - Often handlers are memoized with useCallback and placed earlier.
+6. Rendering Logic / JSX
+
+---
+transition: slide-left
+---
+
 # Optimization: React.memo
 
 - Q: Why did H2 re-render if it didn't depend on `count`?
@@ -186,7 +206,7 @@ transition: slide-left
 # Optimization: useCallback
 
 ```jsx
-const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0);
   const [count2, setCount2] = useState(0);
 
   const increment = useCallback(() => {
@@ -212,7 +232,14 @@ const [count, setCount] = useState(0);
 }
 ```
 
+---
+transition: slide-left
+---
 
+# Exercise: useCallback on a filtered list
+
+- see app.agencyanalytics.com > dev tools Source tab > Ctrl + P to find TaskModal.tsx
+- Refactor Recipe app (Lesson15 that we just did) to useCallback for selecting category, and filtering search change
 ---
 layout: image-right
 transition: slide-left
