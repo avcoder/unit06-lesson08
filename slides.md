@@ -316,6 +316,13 @@ transition: slide-left
   }, [handleSelectCategory]);
   ```
 2. Refactor Recipe app to useCallback for filtering search change
+
+---
+transition: slide-left
+---
+
+# Exercise:
+
 ---
 layout: image-right
 transition: slide-left
@@ -344,7 +351,19 @@ class: text-left
 transition: slide-left
 ---
 
-# O
+# Good Practices
+
+---
+transition: slide-left
+---
+
+# React Dev Tools > Profiler
+
+---
+transition: slide-left
+---
+
+# Exercise:
 
 ---
 transition: slide-left
