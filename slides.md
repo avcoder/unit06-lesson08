@@ -19,9 +19,9 @@ mdc: true
 # React: useMemo, UseCallback
 Frontend Development: Unit 06 - Lesson 08
 
+- [ ] useId, useRef
 - [ ] Optimizations via memo, useMemo, useCallback
 - [ ] Good Practices + Profiler
-- [ ] useId, useRef
 
 <div class="abs-br m-6 text-xl">
   <a href="https://github.com/slidevjs/slidev" target="_blank" class="slidev-icon-btn">
@@ -149,7 +149,7 @@ Refactor Lesson12 (fetching recipes) to include an input box from which to filte
 
 ```jsx
   const [searchQuery, setSearchQuery] = useState("");
-  ...
+  ... 
   const filteredRecipes = useMemo(() => {
     console.log("filtering Recipes");
     if (!searchQuery) return recipes;
@@ -175,12 +175,43 @@ Refactor Lesson12 (fetching recipes) to include an input box from which to filte
 };
 ```
 
+<!--
+- try changing categories state by using React devtools and deleting categories to test if console logs out "filtering recipes"
+-->
 
 ---
 transition: slide-left
 ---
 
 # Optimization: useCallback
+
+```jsx
+const [count, setCount] = useState(0);
+  const [count2, setCount2] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount((prevCount) => prevCount + 1);
+  }, []);
+
+  const prevIncRef = useRef(increment);
+
+  useEffect(() => {
+    console.log("Fn changed: ", prevIncRef.current !== increment);
+    prevIncRef.current = increment;
+  }, [increment]);
+
+  return (
+    <>
+      <h1>Count: {count}</h1>
+      <button onClick={increment}>Increment</button>
+      <button onClick={() => setCount2(count2 + 1)}>
+        Change different state to trigger re-render
+      </button>
+    </>
+  );
+}
+```
+
 
 ---
 layout: image-right
