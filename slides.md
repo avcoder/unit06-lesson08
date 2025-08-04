@@ -144,8 +144,36 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise: useCallback
+# Exercise: useCallback on a filtered list
+Refactor Lesson12 (fetching recipes) to include an input box from which to filter fetched recipes
 
+```jsx
+  const [searchQuery, setSearchQuery] = useState("");
+  ...
+  const filteredRecipes = useMemo(() => {
+    console.log("filtering Recipes");
+    if (!searchQuery) return recipes;
+    return recipes.filter((recipe) =>
+      recipe.strMeal.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [searchQuery, recipes]);
+  ...
+      <hr />
+      <input
+        type="text"
+        placeholder="Search"
+        onChange={(e) => setSearchQuery(e.target.value)}
+      />
+      <hr />
+
+      <ul className={styled.recipes}>
+        {filteredRecipes.length > 0 &&
+          filteredRecipes.map((recipe) => <li>{recipe.strMeal}</li>)}
+      </ul>
+    </>
+  );
+};
+```
 
 
 ---
